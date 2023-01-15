@@ -35,7 +35,7 @@ class UserSerializer(serializers.ModelSerializer):
             'id', 'username',
             'password1', 'password2',
             'first_name', 'last_name',
-            'group'
+            'group', 'photo'
         )
         read_only_fields = ('id',)
 

@@ -6,7 +6,7 @@ from rest_framework import generics, viewsets, permissions
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.db.models import Q
 
-from .serializer import UserSerializer, LogInSerializer, TripSerializer
+from .serializer import UserSerializer, LogInSerializer, NestedTripSerializer
 from .models import Trip
 
 
@@ -23,7 +23,7 @@ class TripView(viewsets.ReadOnlyModelViewSet):
     lookup_field = 'id'
     lookup_url_kwarg = 'trip_id'
     permission_classes = (permissions.IsAuthenticated,)
-    serializer_class = TripSerializer
+    serializer_class = NestedTripSerializer
 
     def get_queryset(self):
         user = self.request.user
