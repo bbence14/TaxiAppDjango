@@ -1,15 +1,23 @@
 import React from 'react';
+import { Breadcrumb, Card } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 
 function SignUp (props) {
     return (
         <>
-            <Link to='/'>Home</Link>
-            <h1>Sign up</h1>
-            <p>
-                Already have an account? <Link to='/log-in'>Log in!</Link>
-            </p>
+            <Breadcrumb>
+                <Breadcrumb.Item href='/#/'> Home</Breadcrumb.Item>
+                <Breadcrumb.Item active>Sign Up</Breadcrumb.Item>
+            </Breadcrumb>
+            <Card>
+                <Card.Header>Sign Up</Card.Header>
+                <Card.Body>
+                    <Card.Text className='text-center'>
+                        Already have an account? <Link to='/log-in'>Log in!</Link>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         </>
     );
 }
